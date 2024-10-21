@@ -30,7 +30,7 @@ export const SettingsPage = () => {
 
   return (
     <>
-      <main className="">
+      <main className="w-full h-screen">
         <section className="flex flex-col justify-start items-center gap-4">
           <h1 id="theme-heading" className="text-xl">
             Theme

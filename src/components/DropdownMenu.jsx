@@ -23,12 +23,6 @@ const DropdownMenu = ({ isMenuOpen, setIsMenuOpen }) => {
           >
             <li>Home</li>
           </Link>
-          <Link
-            to="/addcard"
-            className="list-none w-full text-center p-4 transition-all cursor-pointer"
-          >
-            <li>Add Card</li>
-          </Link>
 
           <Link
             to="/settings"

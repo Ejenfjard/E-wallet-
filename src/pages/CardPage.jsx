@@ -126,9 +126,9 @@ export const CardPage = () => {
 
   return (
     <>
-      <div className="flex flex-col justify-center items-center w-screen lg:flex-row lg:w-1/2">
-        <div className="flex flex-col justify-between items-center w-auto h-auto">
-          <div className="flex flex-col w-full">
+      <div className="flex flex-col items-center lg:flex-row w-screen h-screen lg:flex justify-evenly lg:items-start">
+        <div className="flex flex-col justify-between items-center">
+          <div className="flex flex-col ">
             {!currentCard?.isActive && (
               <button
                 onClick={() => handleActivateCard(currentCard.id)}
@@ -148,7 +148,7 @@ export const CardPage = () => {
             )}
           </div>
 
-          <div>
+          <div className="">
             {currentCard ? (
               <Card card={previewCardData} />
             ) : (
@@ -164,7 +164,7 @@ export const CardPage = () => {
 
         <section
           aria-labelledby="edit-card-heading"
-          className="edit-card-section w-full px-4"
+          className="edit-card-section  px-4 lg:w-2/4 w-full"
         >
           <h2
             id="edit-cards-heading"

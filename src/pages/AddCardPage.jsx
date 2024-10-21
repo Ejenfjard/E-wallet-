@@ -28,12 +28,12 @@ const AddCardPage = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center h-auto lg:flex-row lg:justify-evenly w-3/4">
-        <div className="my-4">
+      <div className="flex flex-col items-center h-screen lg:flex-row lg:flex justify-evenly lg:items-start w-full">
+        <div className="my-4 lg:my-16">
           <Card card={previewCardData} />
         </div>
 
-        <div className="my-4 w-full">
+        <div className="my-4 w-full p-4 lg:w-1/2">
           <AddCardForm
             onCardDataChange={handleCardDataChange}
             resetCardData={resetCardData}

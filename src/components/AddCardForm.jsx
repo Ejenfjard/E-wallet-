@@ -96,108 +96,110 @@ const AddCardForm = ({ onCardDataChange, resetCardData }) => {
   };
 
   return (
-    <form onSubmit={handleFormData} className="p-6 ">
-      {/* Card Number Field */}
-      <div className="flex flex-col">
-        <label htmlFor="cardNumber" className="mb-2">
-          Card Number
-        </label>
-        <input
-          id="cardNumber"
-          name="cardNumber"
-          type="text"
-          placeholder="1234 5678 9012 3456"
-          value={cardNumber}
-          onChange={handleChange}
-          required
-          className="h-8"
-        />
-        {errorMessages.cardNumber && (
-          <p className="bg-red-500 text-white p-2  mb-4">
-            {errorMessages.cardNumber}
-          </p>
-        )}
-      </div>
-
-      {/* Cardholder Name Field */}
-      <div className="flex flex-col">
-        <label htmlFor="cardholderName" className="mb-2">
-          Cardholder Name
-        </label>
-        <input
-          id="cardholderName"
-          name="cardholderName"
-          type="text"
-          placeholder="John Doe"
-          value={cardholderName}
-          onChange={handleChange}
-          required
-          className="h-8"
-        />
-        {errorMessages.cardholderName && (
-          <p className="bg-red-500 text-white p-2 mb-4">
-            {errorMessages.cardholderName}
-          </p>
-        )}
-      </div>
-
-      {/* Valid Thru Field & Vendor field */}
-      <div className="flex flex-col lg:flex-row lg:gap-4">
-        <div className="flex flex-col lg:w-1/3">
-          <label htmlFor="validThru" className="mb-2">
-            Valid Thru
+    <div className="w-full p-4">
+      <form onSubmit={handleFormData} className="">
+        {/* Card Number Field */}
+        <div className="flex flex-col">
+          <label htmlFor="cardNumber" className="mb-2">
+            Card Number
           </label>
           <input
-            id="validThru"
-            name="validThru"
+            id="cardNumber"
+            name="cardNumber"
             type="text"
-            placeholder="12/25"
-            value={validThru}
+            placeholder="1234 5678 9012 3456"
+            value={cardNumber}
             onChange={handleChange}
             required
             className="h-8"
           />
-          {errorMessages.validThru && (
-            <p className="bg-red-500 text-white p-2 mb-4">
-              {errorMessages.validThru}
+          {errorMessages.cardNumber && (
+            <p className="bg-red-500 text-white p-2  mb-4">
+              {errorMessages.cardNumber}
             </p>
           )}
         </div>
-        <div className="flex flex-col md:col-span-2 lg:w-2/3">
-          <label htmlFor="vendor" className="mb-2">
-            Vendor
+
+        {/* Cardholder Name Field */}
+        <div className="flex flex-col">
+          <label htmlFor="cardholderName" className="mb-2">
+            Cardholder Name
           </label>
-          <select
-            id="vendor"
-            name="vendor"
-            value={vendor}
+          <input
+            id="cardholderName"
+            name="cardholderName"
+            type="text"
+            placeholder="John Doe"
+            value={cardholderName}
             onChange={handleChange}
             required
             className="h-8"
-          >
-            <option value="">Select a vendor</option>
-            <option value="Visa">Visa</option>
-            <option value="MasterCard">MasterCard</option>
-            <option value="American Express">American Express</option>
-          </select>
-          {errorMessages.vendor && (
-            <p className="bg-red-500 text-white p-2  mb-4">
-              {errorMessages.vendor}
+          />
+          {errorMessages.cardholderName && (
+            <p className="bg-red-500 text-white p-2 mb-4">
+              {errorMessages.cardholderName}
             </p>
           )}
         </div>
-      </div>
 
-      {/* Submit Button */}
-      <div className="w-full flex justify-center">
-        <button
-          type="submit"
-          className="addCard-btn mt-6 w-1/2 lg:w-1/3  py-2 rounded-md md:col-span-2"
-        >
-          Add card
-        </button>
-      </div>
-    </form>
+        {/* Valid Thru Field & Vendor field */}
+        <div className="flex flex-col lg:flex-row lg:gap-4">
+          <div className="flex flex-col lg:w-1/3">
+            <label htmlFor="validThru" className="mb-2">
+              Valid Thru
+            </label>
+            <input
+              id="validThru"
+              name="validThru"
+              type="text"
+              placeholder="12/25"
+              value={validThru}
+              onChange={handleChange}
+              required
+              className="h-8"
+            />
+            {errorMessages.validThru && (
+              <p className="bg-red-500 text-white p-2 mb-4">
+                {errorMessages.validThru}
+              </p>
+            )}
+          </div>
+          <div className="flex flex-col md:col-span-2 lg:w-2/3">
+            <label htmlFor="vendor" className="mb-2">
+              Vendor
+            </label>
+            <select
+              id="vendor"
+              name="vendor"
+              value={vendor}
+              onChange={handleChange}
+              required
+              className="h-8"
+            >
+              <option value="">Select a vendor</option>
+              <option value="Visa">Visa</option>
+              <option value="MasterCard">MasterCard</option>
+              <option value="American Express">American Express</option>
+            </select>
+            {errorMessages.vendor && (
+              <p className="bg-red-500 text-white p-2  mb-4">
+                {errorMessages.vendor}
+              </p>
+            )}
+          </div>
+        </div>
+
+        {/* Submit Button */}
+        <div className="w-full flex justify-center">
+          <button
+            type="submit"
+            className="addCard-btn mt-6 w-1/2 lg:w-1/3  py-2 rounded-md md:col-span-2"
+          >
+            Add card
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };
 

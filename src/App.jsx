@@ -17,7 +17,7 @@ function App() {
       <ThemeProvider>
         <div className="">
           <Header />
-          <div className="mainContent w-screen h-screen p-4 flex flex-col justify-start items-center">
+          <div className="mainContent w-screen flex flex-col justify-center items-center ">
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/addcard" element={<AddCardPage />} />

@@ -34,7 +34,7 @@ const EditCardForm = ({
             value={cardNumber}
             required
             onChange={handleChange}
-            className="h-8"
+            className=""
             disabled={isCardActive}
           />
           {errorMessages.cardNumber && (
