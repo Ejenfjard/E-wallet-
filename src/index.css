@@ -1,0 +1,125 @@
+/** @format */
+
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background-color: #c90076;
+  --forground-color: #ffe599;
+  --primary-text-color: #000000;
+  --secondory-text-color: #ffffff;
+  --button-color: #28a745;
+  --delete-button-color: #dc3545;
+  --activate-button-color: #6aa84f;
+}
+
+/* Lightmode */
+.lightmode {
+  --background-color: #ffffff;
+  --foreground-color: #f0f0f0;
+  --primary-text-color: #000000;
+  --secondary-text-color: #ababab;
+  --button-color: #33a5ff;
+  --delete-button-color: #dc3545;
+  --activate-button-color: #6aa84f;
+}
+
+/* Darkmode */
+.darkmode {
+  --background-color: #696e77;
+  --foreground-color: #ffffff;
+  --primary-text-color: #ffffff;
+  --secondary-text-color: #b2b2b2;
+  --button-color: #b2b2b2;
+  --delete-button-color: #dc3545;
+  --activate-button-color: #6aa84f;
+}
+
+/* Bluemode */
+.bluemode {
+  --background-color: #4b8ec5;
+  --foreground-color: #a3d5ff;
+  --primary-text-color: #ffffff;
+  --secondary-text-color: #000000;
+  --button-color: #007bff;
+  --delete-button-color: #ff3860;
+  --activate-button-color: #6aa84f;
+}
+
+.App {
+  background-color: var(--background-color);
+}
+
+header {
+  background-color: var(--background-color);
+}
+
+.logo-text {
+  color: var(--primary-text-color);
+}
+
+.mainContent {
+  background-color: var(--background-color);
+}
+
+#active-cards-heading,
+#inactive-cards-heading,
+#edit-cards-heading,
+#theme-heading {
+  color: var(--primary-text-color);
+}
+
+label {
+  color: var(--primary-text-color);
+}
+
+.dropdownMenu {
+  background-color: var(--background-color);
+}
+
+.icon-dropdown {
+  color: var(--secondary-text-color);
+}
+
+input {
+  background-color: var(--foreground-color);
+}
+
+select {
+  background-color: var(--foreground-color);
+}
+
+li {
+  color: var(--primary-text-color);
+}
+
+a {
+  color: var(--primary-text-color);
+}
+
+.addCard-btn {
+  background-color: var(--button-color);
+  color: var(--secondory-text-color);
+}
+
+.editCard-btn {
+  background-color: var(--button-color);
+  color: var(--secondory-text-color);
+}
+
+.deleteCard-btn {
+  background-color: var(--delete-button-color);
+  color: var(--secondory-text-color);
+}
+
+.activateCard-btn {
+  background: var(--activate-button-color);
+}
+
+.cardListMessage {
+  background: var(--background-color);
+  color: var(--secondary-text-color);
+}
