@@ -152,11 +152,11 @@ export const CardPage = () => {
             {currentCard ? (
               <Card card={previewCardData} />
             ) : (
-              <p>Inga kortdata tillgängliga.</p>
+              <p>No cards available</p>
             )}
             {isCardActivated && (
               <div className="text-black-500 font-bold m-4 bg-white text-center">
-                Kortet har aktiverats!
+                Card has been activated!
               </div>
             )}
           </div>
