@@ -20,7 +20,6 @@ const AddCardForm = ({ onCardDataChange, resetCardData }) => {
 
   const { cardNumber, cardholderName, validThru, vendor } = localCardData;
 
-  
   useEffect(() => {
     console.log("Updated card list:", cardList);
   }, [cardList]);
@@ -66,11 +65,10 @@ const AddCardForm = ({ onCardDataChange, resetCardData }) => {
     const { name, value } = e.target;
     setLocalCardData((prev) => ({ ...prev, [name]: value }));
 
-  
     setErrorMessages((prev) => ({ ...prev, [name]: "" }));
 
     onCardDataChange({
-      [name]: value || "", 
+      [name]: value || "",
     });
   };
 
@@ -80,14 +78,12 @@ const AddCardForm = ({ onCardDataChange, resetCardData }) => {
     const validationErrors = validateFormData();
 
     if (Object.keys(validationErrors).length > 0) {
-      setErrorMessages(validationErrors); 
-      return; 
+      setErrorMessages(validationErrors);
+      return;
     }
 
- 
     dispatch(addCard(localCardData));
     navigate("/");
-
 
     setLocalCardData({
       cardNumber: "",
@@ -96,12 +92,11 @@ const AddCardForm = ({ onCardDataChange, resetCardData }) => {
       vendor: "",
     });
 
-  
     if (resetCardData) resetCardData();
   };
 
   return (
-    <form onSubmit={handleFormData} className="p-6 w-screen">
+    <form onSubmit={handleFormData} className="p-6 ">
       {/* Card Number Field */}
       <div className="flex flex-col">
         <label htmlFor="cardNumber" className="mb-2">

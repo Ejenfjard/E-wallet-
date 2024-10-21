@@ -30,8 +30,8 @@ export const SettingsPage = () => {
 
   return (
     <>
-      <main>
-        <section className="flex flex-col justify-center items-center gap-4">
+      <main className="">
+        <section className="flex flex-col justify-start items-center gap-4">
           <h1 id="theme-heading" className="text-xl">
             Theme
           </h1>
@@ -39,7 +39,7 @@ export const SettingsPage = () => {
             <select
               id="options"
               value={theme}
-              onChange={handleThemeChange} 
+              onChange={handleThemeChange}
               className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
               <option value="darkmode">Darkmode</option>

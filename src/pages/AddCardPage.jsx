@@ -28,7 +28,7 @@ const AddCardPage = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center h-auto lg:flex-row lg:justify-evenly">
+      <div className="flex flex-col items-center h-auto lg:flex-row lg:justify-evenly w-3/4">
         <div className="my-4">
           <Card card={previewCardData} />
         </div>

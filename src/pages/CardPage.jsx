@@ -33,18 +33,18 @@ export const CardPage = () => {
 
   const handleDeleteCard = () => {
     console.log("Deleting card with ID:", currentCard.id);
-    dispatch(deleteCard({ id: currentCard.id })); 
-    navigate("/"); 
+    dispatch(deleteCard({ id: currentCard.id }));
+    navigate("/");
   };
 
   const handleCardDataChange = (newCardData) => {
     setEditCardForm((prevData) => ({
       ...prevData,
-      ...newCardData, 
+      ...newCardData,
     }));
     setPreviewCardData((prevData) => ({
       ...prevData,
-      ...newCardData, 
+      ...newCardData,
     }));
   };
 
@@ -96,7 +96,7 @@ export const CardPage = () => {
       errors.vendor = "Välj en leverantör";
     }
 
-    return errors; 
+    return errors;
   };
 
   useEffect(() => {
@@ -137,14 +137,15 @@ export const CardPage = () => {
                 Activate card
               </button>
             )}
-
-            <button
-              onClick={handleDeleteCard}
-              className=" deleteCard-btn p-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition duration-300 my-4 flex-shrink-0 "
-            >
-              <span className="mx-2 text-xl">Delete card</span>
-              <FontAwesomeIcon icon={faTrash} />
-            </button>
+            {!currentCard?.isActive && (
+              <button
+                onClick={handleDeleteCard}
+                className=" deleteCard-btn p-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition duration-300 my-4 flex-shrink-0 "
+              >
+                <span className="mx-2 text-xl">Delete card</span>
+                <FontAwesomeIcon icon={faTrash} />
+              </button>
+            )}
           </div>
 
           <div>
@@ -177,6 +178,7 @@ export const CardPage = () => {
             localCardData={editCardForm}
             onCardDataChange={handleCardDataChange}
             errorMessages={errorMessages}
+            currentCard={currentCard}
           />
         </section>
       </div>

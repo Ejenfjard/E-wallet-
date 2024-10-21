@@ -7,13 +7,16 @@ const EditCardForm = ({
   localCardData,
   handleSubmit,
   errorMessages,
+  currentCard,
 }) => {
   const { cardNumber, cardholderName, validThru, vendor } = localCardData;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    handleInputChange({ [name]: value }); 
+    handleInputChange({ [name]: value });
   };
+
+  const isCardActive = currentCard?.isActive;
 
   return (
     <>
@@ -32,6 +35,7 @@ const EditCardForm = ({
             required
             onChange={handleChange}
             className="h-8"
+            disabled={isCardActive}
           />
           {errorMessages.cardNumber && (
             <p className="bg-red-500 text-white p-2  mb-4">
@@ -54,6 +58,7 @@ const EditCardForm = ({
             required
             onChange={handleChange} // Lägg till onChange
             className="h-8"
+            disabled={isCardActive}
           />
           {errorMessages.cardholderName && (
             <p className="bg-red-500 text-white p-2 mb-4">
@@ -75,8 +80,9 @@ const EditCardForm = ({
               placeholder="12/25"
               value={validThru}
               required
-              onChange={handleChange} 
+              onChange={handleChange}
               className="h-8"
+              disabled={isCardActive}
             />
             {errorMessages.validThru && (
               <p className="bg-red-500 text-white p-2 mb-4">
@@ -93,8 +99,9 @@ const EditCardForm = ({
               name="vendor"
               value={vendor}
               required
-              onChange={handleChange} 
+              onChange={handleChange}
               className="h-8"
+              disabled={isCardActive}
             >
               <option value="">Select a vendor</option>
               <option value="Visa">Visa</option>
@@ -115,7 +122,7 @@ const EditCardForm = ({
             type="submit"
             className="editCard-btn mt-6 w-1/2 lg:w-1/3 py-2 rounded-md  md:col-span-2"
           >
-            Save Changes
+            {isCardActive ? "Go Back" : "Save Changes"}
           </button>
         </div>
       </form>
